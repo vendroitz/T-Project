@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLTS Monitoring Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>PLTS Monitoring System</h1>
+            <div class="status-bar">
+                <span id="connection-status" class="status connected">Menghubungkan...</span>
+                <span id="sys-time">00:00:00</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <!-- Panel AC (PZEM-004T) -->
+        <section class="card ac-card">
+            <h2>Inverter</h2>
+            <div class="grid-stats">
+                <div class="stat"><span class="label">Tegangan</span><span class="value" id="ac-v">0.00</span> <span class="unit">V</span></div>
+                <div class="stat"><span class="label">Arus</span><span class="value" id="ac-i">0.00</span> <span class="unit">A</span></div>
+                <div class="stat"><span class="label">Daya Aktif</span><span class="value" id="ac-p">0.00</span> <span class="unit">W</span></div>
+                <div class="stat"><span class="label">Energi</span><span class="value" id="ac-e">0.00</span> <span class="unit">Wh</span></div>
+                <div class="stat"><span class="label">Frekuensi</span><span class="value" id="ac-f">0.00</span> <span class="unit">Hz</span></div>
+                <div class="stat"><span class="label">Power Factor</span><span class="value" id="ac-pf">0.00</span></div>
+            </div>
+        </section>
+
+        <!-- Panel DC 1 (INA226) -->
+        <section class="card dc-card">
+            <h2>SCC Output</h2>
+            <div class="grid-stats">
+                <div class="stat"><span class="label">Tegangan</span><span class="value" id="dc1-v">0.00</span> <span class="unit">V</span></div>
+                <div class="stat"><span class="label">Arus</span><span class="value" id="dc1-i">0.00</span> <span class="unit">A</span></div>
+                <div class="stat"><span class="label">Daya</span><span class="value" id="dc1-p">0.00</span> <span class="unit">W</span></div>
+            </div>
+        </section>
+
+        <!-- Panel DC 2 (INA226) -->
+        <section class="card dc-card">
+            <h2>Battery</h2>
+            <div class="grid-stats">
+                <div class="stat"><span class="label">Tegangan</span><span class="value" id="dc2-v">0.00</span> <span class="unit">V</span></div>
+                <div class="stat"><span class="label">Arus</span><span class="value" id="dc2-i">0.00</span> <span class="unit">A</span></div>
+                <div class="stat"><span class="label">Daya</span><span class="value" id="dc2-p">0.00</span> <span class="unit">W</span></div>
+            </div>
+        </section>
+
+        <!-- Panel DC 3 (INA238) -->
+        <section class="card dc-card highlight">
+            <h2>Solar Cell</h2>
+            <div class="grid-stats">
+                <div class="stat"><span class="label">Tegangan</span><span class="value" id="dc3-v">0.00</span> <span class="unit">V</span></div>
+                <div class="stat"><span class="label">Arus</span><span class="value" id="dc3-i">0.00</span> <span class="unit">A</span></div>
+                <div class="stat"><span class="label">Daya</span><span class="value" id="dc3-p">0.00</span> <span class="unit">W</span></div>
+            </div>
+        </section>
+
+        <!-- System Logs -->
+        <section class="card log-card">
+            <h2>System Logs</h2>
+            <div class="log-container">
+                <ul id="log-list">
+                    <li>Menunggu log sistem...</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
